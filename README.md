@@ -32,41 +32,41 @@ This is the xdata repo for dart platform. If you want to download all platforms,
 # Demo
     Assume there are two classes defined with XData protocol.  User, Car
 
-    XCarWrapper car1 = new XCarWrapper();
-    car1.setBrand("Audi");
+    var car1 = XCarWrapper();
+    car1.brand = "Audi";
 
-    XCarWrapper car2 = new XCarWrapper();
-    car2.setBrand("Porsche");
+    var car2 = XCarWrapper();
+    car2.brand = "Porsche";
 
-    List<XCarWrapper> cars = new ArrayList<>();
+    var cars =  List<XCarWrapper>();
     cars.add(car1);
     carr.add(car2);
 
 
-    XUserWrapper user = new XUserWrapper();
-    user.setName("John Smith");
-    user.setAge(35);
-    user.setCars(cars);
+    var user = XUserWrapper();
+    user.name = "John Smith";
+    user.age = 35;
+    user.cars = cars;
 
 
     //start to serialize
-    XDataWriter writer = new XDataWriter();
-    byte[] bytes = writer.writeData(user);
+    var writer = new XDataWriter();
+    var bytes = writer.write(user);
 
 
     //start to deserialize
-    XDataParser parser = new XDataParser();
+    var parser = XDataParser();
 
-    XData data = parser.parse(bytes);
+    var data = parser.parse(bytes);
 
-    XUserWrapper user2 = new XUserWrapper(data);
+    var user2 = XUserWrapper(data);
     
     //start to check 
-    assert(user2.getName().equals("John Smith"));
-    assert(user2.getAge() == 35);
-    assert(user2.getCars().size() == 2);
-    assert(user2.getCars().get(0).getBrand().equals("Audi"));
-    assert(user2.getCars().get(1).getBrand().equals("Porsche"));
+    assert(user2.name = "John Smith"));
+    assert(user2.age  == 35);
+    assert(user2.cars.length == 2);
+    assert(user2.cars[0].brand == "Audi");
+    assert(user2.cars[1].brand == "Porsche");
 
 
 # Supprted Types
