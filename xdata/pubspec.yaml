@@ -1,0 +1,10 @@
+name: xdata
+version: 0.0.10
+description: xdata is cross-platform serialize framework, that can transform model amoung java, javascript,objective-c and dart.
+dependencies:
+
+dev_dependencies:
+#  unittest: any
+homepage: https://www.xcore.top
+environment:
+  sdk: '>=2.7.0 <3.0.0'
