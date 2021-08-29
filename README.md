@@ -50,7 +50,7 @@ This is the xdata repo for dart platform. If you want to download all platforms,
 
 
     //start to serialize
-    var writer = new XDataWriter();
+    var writer = XDataWriter();
     var bytes = writer.write(user);
 
 
